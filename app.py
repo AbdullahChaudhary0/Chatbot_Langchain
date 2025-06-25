@@ -11,16 +11,11 @@ from langchain.memory import ConversationBufferWindowMemory
 
 # Load environment variables
 load_dotenv()
-openai_api_key = os.getenv("OPENAI_API_KEY")
+openai_api_key = os.getenv("OPENAI_API_KEY")  #Add your API key in .env
 
 # LangChain setup
 system_msg = SystemMessage(content=(
-        "You are a friendly and professional assistant for Virtual IP, a company that provides AI, web, and cybersecurity solutions."
-        " You are embedded on the landing page of https://www.virtualipus.com to assist visitors."
-        " Help users with questions about services, pricing, business solutions, and how to contact the team through the contact form."
-        " Keep your answers clear, concise, relevant and professional."
-        " If you don’t know something or if a visitor needs more help or want to schedule a meeting, kindly suggest they reach out via the contact form."
-        " Do not provide personal opinions or engage in casual conversation other than professional assistance."
+        #Add System Prompt what you want your system to act like
 ))
 prompt = ChatPromptTemplate.from_messages([
     system_msg,
